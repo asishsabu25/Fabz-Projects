@@ -1,0 +1,107 @@
+{%extends 'doctor/doctorlayout.html'%} {%block content%}
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Medical</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/doctorindex">Home</a></li>
+                <li class="breadcrumb-item active">Add Nutritions</li>
+                <li class="breadcrumb-item active"> <a href="/viewnutrition">View Nutritions</a></li>
+            </ol>
+        </nav>
+    </div>
+  
+    <section class="section">
+        <div class="row" style="margin-left: 100px;">
+          <div class="col-lg-10">
+            <div class="card" style="margin-left: 300px; width: 700px;">
+        <div class="card-body"  >
+          <h5 class="card-title" style="margin-left: 250px;">Add Nutritions</h5>
+        </div>
+        <form action="" method="post" role="form"  enctype="multipart/form-data" >
+            {%csrf_token%}
+          <div class="row" style="margin-left:80px;">
+            <div class="col-md-9 form-group">
+                <label>Title</label>
+              <input type="text"  class="form-control"  name="title" placeholder="Title" required >
+            </div>
+          </div>
+          <div class="form-group col-md-9" style="margin-left: 80px;">
+            <label for="time" >Time</label>
+            <select id="time" class="form-control" name="time">
+            <option value="bf"> BreakFast </option>
+            <option value="lunch">Lunch </option>
+            <option value="dineer">Dineer</option>
+            <option value="snacks">Snacks</option>
+          </select>
+          </div>
+          <!-- <div class="row">
+            <div class="col-md-8 form-group">
+                <label>Description</label>
+              <input type="date"  class="form-control"  name="date" required>
+            </div>
+          </div> -->
+          <div class="row" style="margin-left: 80px;">
+            <div class="col-md-9 form-group">
+                <label for="uploadimg">Upload Image</label>
+              <input type="file"  class="form-control-file"  name="image"  required>
+            </div>
+          </div>
+
+          <div class="row" style="margin-left: 80px;">
+            <div class="col-md-10 form-group">
+                <label for="descriptionform">Description</label>
+              <textarea  class="form-control"  name="description"  rows="5" placeholder="Description" required></textarea>
+            </div>
+          </div>
+          <div class="form-group col-md-9" style="margin-left: 80px;">
+            <label for="inputbloodpressure">BP Level</label>
+            <select id="inputbloodpressure" class="form-control" name="bp">
+            <option selected></option>
+            <option value="Low"> LOW </option>
+            <!-- <option value="2">Normal (between 90/60mmHg & 120/80mmHg) </option> -->
+            <option value="High">HIGH</option>
+          </select>
+          </div>
+
+          <div class="form-group col-md-9" style="margin-left: 80px;" >
+            <label for="inputcholesterol">Cholesterol Level</label>
+            <select id="inputcholesterol" class="form-control" name="cholesterol">
+            <option selected></option>
+            <option value="Low"> LOW</option>
+            <!-- <option value="2">Normal(Less than 200mg/dL)  </option> -->
+            <option value="High"> HIGH </option>
+          </select>
+          </div>
+
+          <div class="form-group col-md-9" style="margin-left: 80px;" >
+            <label for="inputdiabetes">Diabetes Level</label>
+            <select id="inputdiabetes" class="form-control" name="diabetes">
+            <option selected></option>
+            <option value="Low "> LOW  </option>
+            <!-- <option value="2">Normal (below 70 mg/dL)  </option> -->
+            <option value="High"> HIGH </option>
+          </select>
+          </div>
+          
+          <div class="form-group col-md-9" style="margin-left: 80px;">
+            <label for="inputweight">Weight Level</label>
+            <select id="inputweight" class="form-control" name="weight">
+            <option selected></option>
+            <option value="Low"> LOW </option>
+            <!-- <option value="2">Normal(60-80kg)  </option> -->
+            <option value="High">HIGH  </option>
+          </select>
+          </div>
+          <div class="row py-4" >
+            <div class="text-center"><button type="submit" style="margin-left:250px;background-color: rgb(134, 130, 130); width:200px;">ADD</button></div>
+            </div>
+    
+        </form>
+     </div>
+    </div>
+</div>
+</section>
+</main>
+
+{%endblock%}

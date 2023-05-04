@@ -1,0 +1,32 @@
+{%extends 'user/userlayout.html'%} {%block content%}
+
+<main id="main">
+  <section class="w3l-content-3 py-5">
+     <!-- /content-6-section -->
+     <div class="main",style="margin-left:50px;" >
+      <div class="container py-lg-4 mt-lg-4">
+        <div class="row appointment-formw3">
+          <div class="col-lg-4 welcome-left ">
+            <h6 class="title-subhny mb-2"></h6>
+            <h3 class="title-w3l two mb-3"></h3>
+            <p class="text-center"></p>
+            <p></p>
+            <a class="btn btn-style btn-outline-light mt-sm-5 mt-4 mr-2" href="#">
+              </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-8 col-sm-8 footer-list-29 footer-8 mt-lg-0 mt-10">
+          <h6 class="footer-title-29"></p>
+
+          <form action="" class="subscribe" method="post">
+            {%csrf_token%}
+            <input type="email"  style="margin-left: 400px;" name="email" id="password" placeholder="Your Email Address" required="">
+            <input type="password" style="margin-left: 400px;" name="password" id="password" placeholder="Your Password" required="">
+            <button type="submit" style="margin-left: 400px;" class="btn btn-style btn-primary w-100 mt-3">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%endblock%}

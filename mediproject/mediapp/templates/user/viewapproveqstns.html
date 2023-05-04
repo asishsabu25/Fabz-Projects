@@ -1,0 +1,75 @@
+
+ {%extends 'user/userlayout.html'%} {%block content%}
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Medical</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/userindex">Home</a></li>
+                <li class="breadcrumb-item active">View Questions</li>
+            </ol>
+        </nav>
+    </div>
+    <!-- End Page Title -->
+    <section class="section dashboard">
+        <!-- Top Selling -->
+        <div class="row py-lg-1" style="margin-left: 80px;"></div>
+        <div class="col-12 form-group col-md-9" >
+            <div class="card top-selling overflow-auto">
+                <div class="card-body pb-8">
+                    <h5 class="card-title col-lg-19">View Questions<span></span></h5>
+                    <!-- <table class="table table-borderless table-hover">
+                        <thead>
+                            <tr>
+                                
+                                <th scope="col">Question</th>
+                                <th scope="col">Status</th> -->
+                            <!-- </tr>
+                        </thead>
+                        <tbody> -->
+                            <!-- {% for i in qstn%} -->
+                            <!-- <tr>
+                              <td class="fw-bold">{{i.Question}}</a></td>
+                                <td class="fw-bold">         
+                                    <a class="btn btn-success btn-sm" href="/approveadmin/{{i.id}}">{{i.Status}}</a>
+                                    
+                                </td> 
+                               <td><a class="btn btn-success btn-sm" href="/addreplay/{{i.id}}">Replay</a></td>
+                            </tr> 
+                            {%endfor%} 
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        End Top Selling -->
+          
+        
+            
+            <form method="post" role="form"  enctype="multipart/form-data">
+                
+            {%csrf_token%}
+            <div class="form-group" >
+                {% for i in qstn%}
+                <div class="col-sm-6">
+              <label for="formGroupExampleInput">{{i.Question}}</label>
+              
+             </br>
+              <input type="text"  id="replay" name="replay_{{i.id}}">
+               
+              <input type="hidden" id="qid" class="form-control" name="qid" value="{{i.id}}">
+            </div>   
+            {%endfor%}
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Replay</button>
+              </div>
+          </form>
+        </div>
+        
+    </section>
+</main>
+<!-- End #main -->
+
+{%endblock%}

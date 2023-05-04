@@ -1,0 +1,113 @@
+{%extends 'public/playout.html'%} {%block content%}
+<main id="main">
+  <section class="w3l-content-3 py-5">
+    <!-- /content-6-section -->
+    <div class="content-3-info py-4">
+      <div class="container py-lg-4">
+        <div class="row appointment-formw3">
+          <div class="col-lg-4 welcome-left">
+            <h6 class="title-subhny mb-2"></h6>
+            <h3 class="title-w3l two mb-3"></h3>
+            <p class="mb-3"></p>
+            <p></p>
+            <a class="btn btn-style btn-outline-light mt-sm-5 mt-4 mr-2" href="#">
+              </a>
+          </div>
+          <div class="col-lg-6 free-appointment pl-lg-5 mt-5">
+            <div class="appointment-form">
+              <form action="#" method="post">
+                {%csrf_token%}
+                <div class="fields-grid">
+                  <div class="styled-input">
+
+                    <div class="appointment-form-field">
+
+                    <input type="text" name="name" id="name" placeholder="Your Name" required="">
+                  </div>
+                </div>
+
+                <div class="styled-input">
+
+                  <div class="appointment-form-field">
+
+                    <input type="email" name="email" id="email" placeholder="Enter Email" required="">
+                  </div>
+                </div>
+                
+                <div class="styled-input">
+
+                  <div class="appointment-form-field">
+
+                    <input type="date" name="dob" id="dob" placeholder="Set a Date" required="">
+                  </div>
+                </div>
+                <div class="styled-input">
+                  <div class="appointment-form-field">
+                      <select name="gender" class="form-select" required>
+                            <option  selected disabled value="gender">Gender</option>
+                            <option  value="Male">Male</option>
+                            <option  value="Female">Female</option>
+                  </div>
+                </div>
+
+                
+                <div class="styled-input">
+
+                  <div class="appointment-form-field">
+
+                    <input type="text" name="address" id="address" placeholder=" Address" required="">
+                  </div>
+                </div>
+
+                
+                <div class="styled-input">
+
+                  <div class="appointment-form-field">
+
+                    <input type="text" name="mobileno" id="mobileno" placeholder="Mobile Number" required="">
+                  </div>
+                
+
+                <div class="styled-input">
+                  <div class="appointment-form-field">
+                      <select name="usertype" class="form-select" required>
+                         <option  selected disabled value="usertype">User Type</option>
+                         {% for x in d %}
+                          <option  value={{x.id}}>{{x.Usertype}}</option>
+                         {% endfor %}
+                      </select>
+                  </div>
+                </div>
+                </div>
+
+  
+
+                  <div class="styled-input">
+
+                    <div class="appointment-form-field">
+  
+                      <input type="password" name="password" id="password" placeholder=" New Password" required="">
+                    </div>
+                  </div>
+
+                  <div class="styled-input">
+
+                    <div class="appointment-form-field">
+  
+                      <input type="password" name="cpass" id="cpass" placeholder=" Confirm Password" required="">
+                    </div>
+                  </div>
+                
+
+          
+
+                  <div class="main" style="margin-left:125px ;">
+                    <button type="submit" class="btn btn-style btn-primary ">Register Here</button>
+                  </div>
+                </form>
+            </section>
+          </div>
+        </div>
+      </div>
+      </main>
+{%endblock%}

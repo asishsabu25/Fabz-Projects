@@ -1,0 +1,68 @@
+{%extends 'user/userlayout.html'%} {%block content%}
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Medical</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/doctorindex">Home</a></li>
+                <li class="breadcrumb-item active">View Nutritions</li>
+            </ol>
+        </nav>
+    </div>
+    <section class="section">
+        <div class="row" style="margin-left: 100px;">
+          <div class="col-lg-4">
+            <div class="card" style="margin-left: 300px; width: 700px;">
+        <div class="card-body"  >
+          <h5 class="card-title">View Nutritions</h5>
+        </div>
+        <div class="col-md-12">
+
+            <div class="col-12">
+                <div class="card top-selling overflow-auto">
+                    <div class="card-body pb-0">
+                        <h5 class="card-title"><span></span></h5>
+                        <table class="table table-borderless table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">BP</th>
+                                    <th scope="col">Cholesterol</th>
+                                    <th scope="col">Diabetes</th>
+                                    <th scope="col">Weight</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                
+                                {% for i in n%}
+                               
+                                <tr>
+                                    <th scope="row">
+                                        <a href="#"><img src="{{i.Image.url}}" alt="" width='70px'height='50px'></a>
+                                    </th>
+                                    <td class="fw-bold">{{i.Title}}</a>
+                                    </td>
+                                    <td>{{i.Time}}</td>
+                                    <td>{{i.Description}}</td>
+                                    <td class="fw-bold">{{i.BP}}</td>
+                                    <td>{{i.Cholesterol}}</td>
+                                    <td>{{i.Diabetes}}</td>
+                                    <td>{{i.Weight}}</td>
+                                </tr>
+                                {%endfor%}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Selling -->
+            </div>
+        </section>
+    </main>
+    <!-- End #main -->
+    
+    {%endblock%}
